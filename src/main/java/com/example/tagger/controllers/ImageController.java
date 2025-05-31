@@ -20,7 +20,7 @@ public class ImageController {
     }
 
     @PostMapping("/upload")
-    public ResponseEntity<String> uploadImage(@RequestParam MultipartFile file) {
+    public ResponseEntity<String> uploadImage(@RequestParam("file") MultipartFile file) {
         try {
             String imageId = imageService.uploadImage(file);
             return ResponseEntity.ok("Image uploaded successfully with ID: " + imageId);
